@@ -1,4 +1,4 @@
-from textkit.checks import is_palindrome
+from textkit.checks import is_anagram, is_palindrome
 
 
 def test_palindrome_true():
@@ -13,4 +13,13 @@ def test_palindrome_with_spaces():
     assert is_palindrome("nurses run")
 
 
-# TODO: is_anagram has no tests at all.
+def test_is_anagram_true():
+    assert is_anagram("listen", "silent")
+
+
+def test_is_anagram_ignores_spaces_and_case():
+    assert is_anagram("Dormitory", "Dirty room")
+
+
+def test_is_anagram_false():
+    assert not is_anagram("hello", "world")
